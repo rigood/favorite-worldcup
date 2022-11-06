@@ -1,10 +1,26 @@
-export const Data = [
+export const Female = [
+  {
+    id: 1021,
+    group: 10,
+    name: "옥순",
+    src: "/assets/img/10oksoon.jpg",
+  },
+  {
+    id: 1121,
+    group: 11,
+    name: "영숙",
+    src: "/assets/img/11youngsuk.png",
+  },
+];
+
+export const Male = [
   {
     id: 111,
     group: 1,
     name: "영호",
     src: "/assets/img/1youngho.jpg",
   },
+
   {
     id: 411,
     group: 4,
@@ -17,12 +33,14 @@ export const Data = [
     name: "영철",
     src: "/assets/img/4youngcheol.jpg",
   },
+
   {
     id: 511,
     group: 5,
     name: "정수",
     src: "/assets/img/5jeongsoo.jpg",
   },
+
   {
     id: 711,
     group: 7,
@@ -35,6 +53,7 @@ export const Data = [
     name: "상철",
     src: "/assets/img/7sangcheol.jpg",
   },
+
   {
     id: 911,
     group: 9,
@@ -48,12 +67,6 @@ export const Data = [
     src: "/assets/img/9youngsoo.jpg",
   },
 
-  {
-    id: 1021,
-    group: 10,
-    name: "옥순",
-    src: "/assets/img/10oksoon.jpg",
-  },
   {
     id: 1011,
     group: 10,
@@ -77,6 +90,18 @@ export const Data = [
     group: 10,
     name: "영수",
     src: "/assets/img/10youngsoo.jpg",
+  },
+  {
+    id: 1015,
+    group: 10,
+    name: "상철",
+    src: "/assets/img/10sangcheol.png",
+  },
+  {
+    id: 1016,
+    group: 10,
+    name: "광수",
+    src: "/assets/img/10gwangsoo.png",
   },
 
   {
