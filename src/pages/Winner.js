@@ -102,8 +102,11 @@ function Winner() {
     <>
       <div ref={ref}>
         <Title />
-        <WinnerImage src={winner.src}>
-          <img src="/assets/img/medal.png" alt="우승 메달 이미지" />
+        <WinnerImage src={process.env.PUBLIC_URL + winner.src}>
+          <img
+            src={process.env.PUBLIC_URL + "/assets/img/medal.png"}
+            alt="우승 메달 이미지"
+          />
         </WinnerImage>
         <WinnerText>
           <div>{nickname}의 이상형 </div>
