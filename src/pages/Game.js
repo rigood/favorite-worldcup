@@ -25,7 +25,9 @@ function Game() {
       people = [...Female, ...Male];
     }
 
-    const randomPeople = people.sort(() => Math.random() - 0.5).slice(0, round);
+    const randomPeople = people
+      .sort(() => Math.random() - 0.5)
+      .slice(0, totalRound);
 
     setCandidates(randomPeople);
     setDisplays([randomPeople[0], randomPeople[1]]);
@@ -72,7 +74,10 @@ function Game() {
           return (
             <Member key={member.id} onClick={handleClick(member)}>
               <Image>
-                <img src={member.src} />
+                <img
+                  src={member.src}
+                  alt={`${member.group}기 ${member.name}`}
+                />
               </Image>
               <Text>
                 {member.group}기 {member.name}

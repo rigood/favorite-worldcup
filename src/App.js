@@ -4,7 +4,7 @@ import reset from "styled-reset";
 import { useState } from "react";
 import { AppContext } from "./context/AppContext";
 import { Outlet } from "react-router-dom";
-import { Wrapper, Title } from "./styled/style";
+import { Wrapper } from "./styled/style";
 
 const GlobalStyle = createGlobalStyle`
 ${reset}
