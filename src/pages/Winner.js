@@ -36,7 +36,19 @@ function Winner() {
     navigate("/", { replace: true });
   };
 
-  const handleShare = () => {};
+  const handleShare = () => {
+    if (window.Kakao) {
+      const kakao = window.Kakao;
+
+      if (!kakao.isInitialized()) {
+        kakao.init(process.env.REACT_APP_KAKAO_KEY);
+      }
+
+      kakao.Share.sendCustom({
+        templateId: 85487,
+      });
+    }
+  };
 
   return (
     <>

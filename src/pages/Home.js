@@ -37,7 +37,11 @@ function Home() {
         </Radio>
       </RadioGroup>
 
-      <RadioGroup label="출연진 성별" value={gender} onChange={setGender}>
+      <RadioGroup
+        label="출연진(이상형) 성별"
+        value={gender}
+        onChange={setGender}
+      >
         <Radio name="gender" value="female">
           여자
         </Radio>
