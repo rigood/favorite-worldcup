@@ -5,25 +5,30 @@ import Home from "./pages/Home.js";
 import Game from "./pages/Game.js";
 import Winner from "./pages/Winner.js";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+      children: [
+        {
+          path: "",
+          element: <Home />,
+        },
+        {
+          path: "game",
+          element: <Game />,
+        },
+        {
+          path: "result/:id",
+          element: <Winner />,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <App />,
-    children: [
-      {
-        path: "",
-        element: <Home />,
-      },
-      {
-        path: "game",
-        element: <Game />,
-      },
-      {
-        path: "result/:id",
-        element: <Winner />,
-      },
-    ],
-  },
-]);
+    basename: process.env.PUBLIC_URL,
+  }
+);
 
 export default router;
