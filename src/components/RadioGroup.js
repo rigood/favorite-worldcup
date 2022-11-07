@@ -5,7 +5,7 @@ function RadioGroup({ label, children, ...rest }) {
     <fieldset>
       <legend>
         {label}
-        <span>*</span>
+        <span className="asterisk">*</span>
       </legend>
       <RadioContext.Provider value={rest}>{children}</RadioContext.Provider>
     </fieldset>

@@ -8,18 +8,45 @@ export const Wrapper = styled.div`
   padding: 50px 30px;
 `;
 
-export const Title = styled.div`
+export const TitleWrapper = styled.div`
   text-align: center;
   font-family: "GmarketSans";
   color: var(--primary);
   h2 {
     font-size: 30px;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
   }
   h1 {
     font-size: 40px;
     font-weight: bold;
-    margin-bottom: 50px;
+    padding-bottom: 10px;
+  }
+`;
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 30px;
+  fieldset {
+    legend {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      span.asterisk {
+        margin-left: 5px;
+        color: var(--primary);
+      }
+    }
+    input[type="text"] {
+      all: unset;
+      width: 100%;
+      width: calc(100% - 20px); // 20px = padding left+right
+      padding: 10px;
+      padding-top: 0px;
+      border-bottom: 1px solid lightgray;
+      font-size: 16px;
+    }
   }
 `;
 
@@ -27,7 +54,7 @@ export const Progress = styled.h3`
   text-align: center;
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin: 30px 0;
 `;
 
 export const Main = styled.div`
@@ -82,6 +109,7 @@ export const WinnerImage = styled.div`
   background-position: center center;
   width: 100%;
   aspect-ratio: 1;
+  transform: scale(0.9);
   border-radius: 40px;
   overflow: hidden;
   position: relative;
@@ -95,15 +123,16 @@ export const WinnerImage = styled.div`
 `;
 
 export const WinnerText = styled.div`
-  margin-top: 40px;
   text-align: center;
   font-weight: bold;
   div:first-child {
     font-size: 24px;
-    margin-bottom: 15px;
+    padding-top: 20px;
   }
   div:last-child {
     font-size: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     span {
       margin: 0 10px;
     }
@@ -118,49 +147,32 @@ export const Buttons = styled.div`
   width: 100%;
   display: flex;
   gap: 10px;
-  margin-top: 60px;
+  margin-top: 30px;
 `;
 
 export const Button = styled.button`
   flex: 1;
-  width: calc(100% - 20px); // 20px = padding left+right
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
   padding: 15px 10px;
+  width: calc(100% - 20px); // 20px = padding left+right
   border-radius: 5px;
   background-color: var(--primary);
   color: white;
   cursor: pointer;
   transition: all 0.3s;
-  span {
-    margin-left: 15px;
-  }
   &:hover {
     opacity: 0.8;
   }
 `;
 
-export const Form = styled.form`
+export const ReplayBtn = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 50px;
-  margin: 50px 0;
-  fieldset {
-    legend {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      span {
-        margin-left: 5px;
-        color: var(--primary);
-      }
-    }
-    input[type="text"] {
-      all: unset;
-      width: calc(100% - 20px); // 20px = padding left+right
-      padding: 10px;
-      padding-top: 0px;
-      border-bottom: 1px solid lightgray;
-      font-size: 16px;
-    }
-  }
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
 `;

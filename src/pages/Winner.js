@@ -1,5 +1,5 @@
 import { AppContext } from "../context/AppContext";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useCallback, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import {
   WinnerImage,
@@ -7,14 +7,18 @@ import {
   WinnerHeart,
   Buttons,
   Button,
+  ReplayBtn,
 } from "../styled/style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faDownload,
   faHeart,
   faReply,
   faShareAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { Female, Male } from "../data/Data";
+import { toPng } from "html-to-image";
+import Title from "../components/Title";
 
 function Winner() {
   const { nickname } = useContext(AppContext);
@@ -61,31 +65,66 @@ function Winner() {
     }
   };
 
+  const ref = useRef(null);
+  const handleImgSave = useCallback(() => {
+    if (ref.current === null) {
+      return;
+    }
+
+    toPng(ref.current, {
+      cacheBust: true,
+      backgroundColor: "white",
+      style: {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        paddingBlock: "30px",
+      },
+    })
+      .then((dataUrl) => {
+        const link = document.createElement("a");
+        link.download = `${nickname}의_이상형.png`;
+        link.href = dataUrl;
+        link.click();
+      })
+      .catch((err) => {
+        console.log("이미지 다운로드 중 오류가 발생하였습니다.", err);
+      });
+  }, [ref]);
+
   return (
     <>
-      <WinnerImage src={winner.src}>
-        <img src="/assets/img/medal.png" />
-      </WinnerImage>
-      <WinnerText>
-        <div>{nickname}의 이상형 </div>
-        <div>
-          <WinnerHeart icon={faHeart} beat />
-          <span>
-            {winner.group}기 {winner.name}
-          </span>
-          <WinnerHeart icon={faHeart} beat />
-        </div>
-      </WinnerText>
+      <div ref={ref}>
+        <Title />
+        <WinnerImage src={winner.src}>
+          <img src="/assets/img/medal.png" />
+        </WinnerImage>
+        <WinnerText>
+          <div>{nickname}의 이상형 </div>
+          <div>
+            <WinnerHeart icon={faHeart} beat />
+            <span>
+              {winner.group}기 {winner.name}
+            </span>
+            <WinnerHeart icon={faHeart} beat />
+          </div>
+        </WinnerText>
+      </div>
       <Buttons>
-        <Button onClick={handleReplay}>
-          <FontAwesomeIcon icon={faReply} />
-          <span>다시 하기</span>
+        <Button onClick={handleImgSave}>
+          <FontAwesomeIcon icon={faDownload} />
+          <span>이미지 저장</span>
         </Button>
         <Button onClick={handleShare}>
           <FontAwesomeIcon icon={faShareAlt} />
           <span>카톡 공유</span>
         </Button>
       </Buttons>
+      <ReplayBtn onClick={handleReplay}>
+        <FontAwesomeIcon icon={faReply} />
+        <span>다시 하기</span>
+      </ReplayBtn>
     </>
   );
 }

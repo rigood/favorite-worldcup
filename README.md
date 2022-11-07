@@ -26,14 +26,16 @@
 
 - 최종 결과
   - [x] 카카오톡 링크 공유 가능
-  - [ ] 이상형 이미지 저장 및 다운로드
+  - [x] 이상형 이미지 저장
 
 <br>
 
-## 🔨 사용 기술
+## 🔨 패키지
 
 - React
+- React-router-dom
 - Styled-components
+- html-to-image
 
 <br>
 
@@ -44,3 +46,4 @@
 - `useEffect`를 이용하여 라운드가 시작되면 랜덤으로 후보 추출
 - `useState`를 이용하여 후보, 렌더링 될 후보, 승자 배열의 state 관리
 - `카카오톡 공유 API`를 통해 링크 공유 기능 구현
+- `html-to-image` 라이브러리 사용하여 DOM을 이미지로 저장

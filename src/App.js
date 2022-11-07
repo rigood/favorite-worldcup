@@ -44,10 +44,6 @@ function App() {
         }}
       >
         <Wrapper>
-          <Title>
-            <h2>나는 SOLO</h2>
-            <h1>이상형 월드컵</h1>
-          </Title>
           <Outlet />
         </Wrapper>
       </AppContext.Provider>

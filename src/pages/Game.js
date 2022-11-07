@@ -3,6 +3,7 @@ import { AppContext } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
 import { Progress, Main, Vs, Member, Image, Text } from "../styled/style";
 import { Female, Male } from "../data/Data";
+import Title from "../components/Title";
 
 function Game() {
   const { totalRound, gender } = useContext(AppContext);
@@ -60,6 +61,7 @@ function Game() {
 
   return (
     <>
+      <Title />
       <Progress>
         {round === 2
           ? "결승 👑 내 이상형은 누구?"
