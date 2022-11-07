@@ -46,6 +46,17 @@ function Winner() {
 
       kakao.Share.sendCustom({
         templateId: 85487,
+        templateArgs: {
+          title: "🏆 나는솔로 이상형 월드컵 🏆",
+          description: "나는솔로 출연진 중 그대의 이상형을 찾아보세요.",
+          logoUrl:
+            "https://github.com/rigood/favorite-worldcup/blob/9f9c8bcfe1c8aa943da206c5d593dfab25521fee/public/assets/img/logo.jpg?raw=true",
+          femaleImgUrl:
+            "https://github.com/rigood/favorite-worldcup/blob/main/public/assets/img/10oksoon.JPG?raw=true",
+          maleImgUrl:
+            "https://github.com/rigood/favorite-worldcup/blob/main/public/assets/img/11youngcheol.jpg?raw=true",
+          btnText: "이상형 찾기",
+        },
       });
     }
   };
