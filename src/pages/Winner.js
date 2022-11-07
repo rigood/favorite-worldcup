@@ -15,6 +15,7 @@ import {
   faHeart,
   faReply,
   faShareAlt,
+  faSync,
 } from "@fortawesome/free-solid-svg-icons";
 import { Female, Male } from "../data/Data";
 import { toPng } from "html-to-image";
@@ -25,6 +26,7 @@ function Winner() {
 
   const { id } = useParams();
   const [winner, setWinner] = useState("");
+  const [isDownloading, setIsDownloading] = useState(false);
 
   useEffect(() => {
     const candidates = [...Female, ...Male];
@@ -71,6 +73,8 @@ function Winner() {
       return;
     }
 
+    setIsDownloading(true);
+
     toPng(ref.current, {
       cacheBust: true,
       backgroundColor: "white",
@@ -87,6 +91,7 @@ function Winner() {
         link.download = `${nickname}의_이상형.png`;
         link.href = dataUrl;
         link.click();
+        setIsDownloading(false);
       })
       .catch((err) => {
         console.log("이미지 다운로드 중 오류가 발생하였습니다.", err);
@@ -113,8 +118,11 @@ function Winner() {
       </div>
       <Buttons>
         <Button onClick={handleImgSave}>
-          <FontAwesomeIcon icon={faDownload} />
-          <span>이미지 저장</span>
+          <FontAwesomeIcon
+            icon={isDownloading ? faSync : faDownload}
+            spin={isDownloading ? true : false}
+          />
+          <span>{isDownloading ? "저장중..." : "이미지 저장"}</span>
         </Button>
         <Button onClick={handleShare}>
           <FontAwesomeIcon icon={faShareAlt} />
