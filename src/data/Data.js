@@ -30,7 +30,7 @@ export const Female = [
     id: 1021,
     group: 10,
     name: "옥순",
-    src: "/assets/img/10oksoon.jpg",
+    src: "/assets/img/10oksoon.png",
   },
   {
     id: 1121,
@@ -58,7 +58,7 @@ export const Male = [
     id: 411,
     group: 4,
     name: "정식",
-    src: "/assets/img/4jeongsik.jpg",
+    src: "/assets/img/4jeongsik.png",
   },
   {
     id: 412,
@@ -91,13 +91,13 @@ export const Male = [
     id: 911,
     group: 9,
     name: "광수",
-    src: "/assets/img/9gwangsoo.jpg",
+    src: "/assets/img/9gwangsoo.png",
   },
   {
     id: 912,
     group: 9,
     name: "영수",
-    src: "/assets/img/9youngsoo.jpg",
+    src: "/assets/img/9youngsoo.png",
   },
   {
     id: 913,
