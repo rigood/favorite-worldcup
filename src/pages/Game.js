@@ -65,9 +65,7 @@ function Game() {
     <>
       <Title />
       <Progress>
-        {round === 2
-          ? "결승 👑 내 이상형은 누구?"
-          : `${round}강 ⚽ (${step}/${round / 2})`}
+        {round === 2 ? "👑 결승 👑" : `${round}강 ⚽ (${step}/${round / 2})`}
       </Progress>
       <Main>
         {displays.map((member) => {
