@@ -11,7 +11,6 @@ ${reset}
   box-sizing: border-box;
 }
 body{
-  font-family: 'Pretendard';
   color: #212529;
 }
 li{
@@ -31,7 +30,6 @@ export const Wrapper = styled.div`
 
 export const TitleWrapper = styled.div`
   text-align: center;
-  font-family: "GmarketSans";
   color: var(--primary);
   h2 {
     font-size: 30px;
