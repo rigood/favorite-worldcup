@@ -2,6 +2,7 @@ import { AppContext } from "../context/AppContext";
 import { useState, useEffect, useContext, useCallback, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import {
+  WinnerLoading,
   WinnerImage,
   WinnerText,
   WinnerHeart,
@@ -15,6 +16,7 @@ import {
   faHeart,
   faReply,
   faShareAlt,
+  faSpinner,
   faSync,
 } from "@fortawesome/free-solid-svg-icons";
 import { Female, Male } from "../data/Data";
@@ -98,11 +100,23 @@ function Winner() {
       });
   }, [ref]);
 
+  if (!winner) {
+    return (
+      <WinnerLoading>
+        <FontAwesomeIcon icon={faSpinner} spin />
+        <span>우승자 정보를 저장중입니다. </span>
+      </WinnerLoading>
+    );
+  }
+
   return (
     <>
       <div ref={ref}>
         <Title />
-        <WinnerImage src={process.env.PUBLIC_URL + winner.src}>
+        <WinnerImage
+          src={process.env.PUBLIC_URL + winner.src}
+          alt="우승자 이미지"
+        >
           <img
             src={process.env.PUBLIC_URL + "/assets/img/medal.png"}
             alt="우승 메달 이미지"

@@ -122,6 +122,13 @@ export const WinnerImage = styled.div`
   }
 `;
 
+export const WinnerLoading = styled.div`
+  text-align: center;
+  span {
+    margin-left: 10px;
+  }
+`;
+
 export const WinnerText = styled.div`
   text-align: center;
   font-weight: bold;
