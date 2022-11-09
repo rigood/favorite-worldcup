@@ -1,30 +1,7 @@
-import { createGlobalStyle } from "styled-components";
-import reset from "styled-reset";
-
 import { useState } from "react";
 import { AppContext } from "./context/AppContext";
 import { Outlet } from "react-router-dom";
-import { Wrapper } from "./styled/style";
-
-const GlobalStyle = createGlobalStyle`
-${reset}
-:root{
-  --primary: #ff3e51;
-}
-*{
-  box-sizing: border-box;
-}
-body{
-  font-family: 'Pretendard';
-  color: #212529;
-}
-li{
-  list-style: none;
-}
-button{
-  all: unset;
-}
-`;
+import { GlobalStyle, Wrapper } from "./styled/style";
 
 function App() {
   const [totalRound, setTotalRound] = useState("16");

@@ -1,5 +1,26 @@
+import styled, { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styled from "styled-components";
+
+export const GlobalStyle = createGlobalStyle`
+${reset}
+:root{
+  --primary: #ff3e51;
+}
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Pretendard';
+  color: #212529;
+}
+li{
+  list-style: none;
+}
+button{
+  all: unset;
+}
+`;
 
 export const Wrapper = styled.div`
   width: 100%;
