@@ -7,8 +7,14 @@ import { Form, Button } from "../styled/style";
 import Title from "../components/Title";
 
 function Home() {
-  const { totalRound, setTotalRound, gender, setGender, setNickname } =
-    useContext(AppContext);
+  const {
+    totalRound,
+    setTotalRound,
+    gender,
+    setGender,
+    setNickname,
+    isTouchScreen,
+  } = useContext(AppContext);
 
   const navigate = useNavigate();
 
@@ -71,7 +77,9 @@ function Home() {
           />
         </fieldset>
 
-        <Button type="submit">시작</Button>
+        <Button type="submit" isTouchScreen={isTouchScreen}>
+          시작
+        </Button>
       </Form>
     </>
   );

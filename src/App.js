@@ -7,6 +7,14 @@ function App() {
   const [totalRound, setTotalRound] = useState("16");
   const [gender, setGender] = useState("male");
   const [nickname, setNickname] = useState("그대");
+  const checkTouchScreen = () => {
+    if ("ontouchstart" in document.documentElement) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  const isTouchScreen = checkTouchScreen();
   return (
     <>
       <GlobalStyle />
@@ -18,6 +26,7 @@ function App() {
           setGender,
           nickname,
           setNickname,
+          isTouchScreen,
         }}
       >
         <Wrapper>

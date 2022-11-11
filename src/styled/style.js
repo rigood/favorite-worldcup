@@ -188,9 +188,7 @@ export const Button = styled.button`
   color: white;
   cursor: pointer;
   transition: all 0.3s;
-  &:hover {
-    opacity: 0.8;
-  }
+  ${(props) => (props.isTouchScreen ? "" : "&:hover{opacity:0.8}")}
 `;
 
 export const ReplayBtn = styled.div`
