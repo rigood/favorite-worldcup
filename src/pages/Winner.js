@@ -22,6 +22,7 @@ import {
 import { Female, Male } from "../data/Data";
 import { toPng } from "html-to-image";
 import Title from "../components/Title";
+import Particles from "../components/Particles";
 
 function Winner() {
   const { nickname, isTouchScreen } = useContext(AppContext);
@@ -111,6 +112,7 @@ function Winner() {
 
   return (
     <>
+      <Particles />
       <div ref={ref}>
         <Title />
         <WinnerImage
