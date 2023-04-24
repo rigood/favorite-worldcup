@@ -31,7 +31,7 @@ function Game() {
 
     setCandidates(randomPeople);
     setDisplays([randomPeople[0], randomPeople[1]]);
-  }, []);
+  }, [totalRound, gender]);
 
   const navigate = useNavigate();
 
@@ -39,8 +39,8 @@ function Game() {
     if (candidates.length > 2) {
       // 현재 라운드에서 다음 순서 진행
       setWinners([...winners, member]);
-      setDisplays([candidates[2], candidates[3]]);
       setCandidates(candidates.slice(2));
+      setDisplays([candidates[2], candidates[3]]);
     } else {
       if (winners.length !== 0) {
         // 다음 라운드 진출 (ex: 16강 -> 8강)
@@ -51,7 +51,7 @@ function Game() {
         setRound((prev) => prev / 2);
       } else {
         // 결승 진출
-        setWinners([member]);
+        setWinners(member);
         setCandidates([]);
         setDisplays([]);
         setRound(1);

@@ -37,7 +37,7 @@ function Winner() {
       (candidate) => candidate.id === parseInt(id)
     );
     setWinner(winner);
-  }, []);
+  }, [id]);
 
   const navigate = useNavigate();
 
@@ -91,7 +91,7 @@ function Winner() {
     })
       .then((dataUrl) => {
         const link = document.createElement("a");
-        link.download = `${nickname}의_이상형.png`;
+        link.download = `${nickname}의_이상형_${winner.group}기_${winner.name}.png`;
         link.href = dataUrl;
         link.click();
         setIsDownloading(false);
@@ -99,7 +99,7 @@ function Winner() {
       .catch((err) => {
         console.log("이미지 다운로드 중 오류가 발생하였습니다.", err);
       });
-  }, [ref]);
+  }, [ref, nickname, winner.group, winner.name]);
 
   if (!winner) {
     return (
