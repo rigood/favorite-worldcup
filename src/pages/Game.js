@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import { AppContext } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { Progress, Main, Vs, Member, Image, Text } from "../styled/style";
 import { Female, Male } from "../data/Data";
 import Title from "../components/Title";
@@ -49,6 +50,7 @@ function Game() {
         setDisplays([updatedCandidates[0], updatedCandidates[1]]);
         setWinners([]);
         setRound((prev) => prev / 2);
+        toast(`⚽ ${round === 4 ? "결승" : round / 2 + "강"} 진출 ⚽`);
       } else {
         // 결승 진출
         setWinners(member);

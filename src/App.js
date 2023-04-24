@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { AppContext } from "./context/AppContext";
 import { Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { GlobalStyle, Wrapper } from "./styled/style";
 
 function App() {
@@ -33,6 +35,18 @@ function App() {
         <Wrapper>
           <Outlet />
         </Wrapper>
+        <ToastContainer
+          toastStyle={{
+            backgroundColor: "#ff3e51",
+            color: "#ffffff",
+            textAlign: "center",
+          }}
+          position="top-center"
+          limit={1}
+          closeButton={false}
+          autoClose={1000}
+          hideProgressBar
+        />
       </AppContext.Provider>
     </>
   );
