@@ -73,7 +73,7 @@ function Game() {
             <Member key={member.id} onClick={handleClick(member)}>
               <Image>
                 <img
-                  src={process.env.PUBLIC_URL + member.src}
+                  src={process.env.PUBLIC_URL + "/assets/img/" + member.src}
                   alt={`${member.group}기 ${member.name}`}
                 />
               </Image>

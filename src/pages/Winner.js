@@ -116,7 +116,7 @@ function Winner() {
       <div ref={ref}>
         <Title />
         <WinnerImage
-          src={process.env.PUBLIC_URL + winner.src}
+          src={process.env.PUBLIC_URL + "/assets/img/" + winner.src}
           alt="우승자 이미지"
         >
           <img
