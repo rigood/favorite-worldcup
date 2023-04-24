@@ -2,7 +2,16 @@ import { useEffect, useState, useContext } from "react";
 import { AppContext } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { Progress, Main, Vs, Member, Image, Text } from "../styled/style";
+import {
+  ProgressBarBg,
+  ProgressBar,
+  Progress,
+  Main,
+  Vs,
+  Member,
+  Image,
+  Text,
+} from "../styled/style";
 import { Female, Male } from "../data/Data";
 import Title from "../components/Title";
 
@@ -69,6 +78,9 @@ function Game() {
       <Progress>
         {round === 2 ? "👑 결승 👑" : `${round}강 ⚽ (${step}/${round / 2})`}
       </Progress>
+      <ProgressBarBg>
+        <ProgressBar ratio={(step / (round / 2)) * 100 - 5} />
+      </ProgressBarBg>
       <Main>
         {displays.map((member) => {
           return (

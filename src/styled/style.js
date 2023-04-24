@@ -7,6 +7,7 @@ ${reset}
 :root{
   --primary: #ff3e51;
   --black: #212529;
+  --gray: #EDF2F7;
 }
 *{
   box-sizing: border-box;
@@ -70,11 +71,25 @@ export const Form = styled.form`
   }
 `;
 
+export const ProgressBarBg = styled.div`
+  width: 100%;
+  height: 5px;
+  background-color: var(--gray);
+  margin: 30px 0 50px 0;
+  position: relative;
+`;
+
+export const ProgressBar = styled.div`
+  width: ${(props) => props.ratio + "%"};
+  height: 100%;
+  background-color: var(--primary);
+  transition: width 0.5s ease;
+`;
+
 export const Progress = styled.h3`
   font-size: 24px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 30px;
 `;
 
 export const Main = styled.div`

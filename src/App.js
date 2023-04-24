@@ -41,7 +41,7 @@ function App() {
             color: "#ffffff",
             textAlign: "center",
           }}
-          position="top-center"
+          position="bottom-center"
           limit={1}
           closeButton={false}
           autoClose={1000}
