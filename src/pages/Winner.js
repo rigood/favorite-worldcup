@@ -25,7 +25,7 @@ import Title from "../components/Title";
 import Particles from "../components/Particles";
 
 function Winner() {
-  const { nickname, isTouchScreen } = useContext(AppContext);
+  const { nickname, isTouchScreen, isSafariBrowser } = useContext(AppContext);
 
   const { id } = useParams();
   const [winner, setWinner] = useState("");
@@ -136,13 +136,15 @@ function Winner() {
         </WinnerText>
       </div>
       <Buttons>
-        <Button onClick={handleImgSave} isTouchScreen={isTouchScreen}>
-          <FontAwesomeIcon
-            icon={isDownloading ? faSync : faDownload}
-            spin={isDownloading ? true : false}
-          />
-          <span>{isDownloading ? "저장중..." : "이미지 저장"}</span>
-        </Button>
+        {!isSafariBrowser && (
+          <Button onClick={handleImgSave} isTouchScreen={isTouchScreen}>
+            <FontAwesomeIcon
+              icon={isDownloading ? faSync : faDownload}
+              spin={isDownloading ? true : false}
+            />
+            <span>{isDownloading ? "저장중..." : "이미지 저장"}</span>
+          </Button>
+        )}
         <Button onClick={handleShare} isTouchScreen={isTouchScreen}>
           <FontAwesomeIcon icon={faShareAlt} />
           <span>카톡 공유</span>

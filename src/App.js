@@ -10,13 +10,30 @@ function App() {
   const [gender, setGender] = useState("male");
   const [nickname, setNickname] = useState("그대");
 
-  const isTouchScreen = () => {
+  function checkTouchScreen() {
     if ("ontouchstart" in document.documentElement) {
       return true;
     } else {
       return false;
     }
-  };
+  }
+
+  function checkSafariBrowser() {
+    let userAgentString = navigator.userAgent;
+
+    let chromeAgent = userAgentString.indexOf("Chrome") > -1;
+
+    let safariAgent = userAgentString.indexOf("Safari") > -1;
+
+    if (chromeAgent && safariAgent) {
+      safariAgent = false;
+    }
+
+    return safariAgent;
+  }
+
+  const isTouchScreen = checkTouchScreen();
+  const isSafariBrowser = checkSafariBrowser();
 
   return (
     <>
@@ -30,6 +47,7 @@ function App() {
           nickname,
           setNickname,
           isTouchScreen,
+          isSafariBrowser,
         }}
       >
         <Wrapper>
