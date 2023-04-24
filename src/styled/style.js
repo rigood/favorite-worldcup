@@ -6,12 +6,13 @@ export const GlobalStyle = createGlobalStyle`
 ${reset}
 :root{
   --primary: #ff3e51;
+  --black: #212529;
 }
 *{
   box-sizing: border-box;
 }
 body{
-  color: #212529;
+  color: var(--black);
 }
 li{
   list-style: none;
@@ -29,25 +30,26 @@ export const Wrapper = styled.div`
 `;
 
 export const TitleWrapper = styled.div`
-  text-align: center;
   color: var(--primary);
+  text-align: center;
   h2 {
     font-size: 30px;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
   }
   h1 {
     font-size: 40px;
     font-weight: bold;
-    padding-bottom: 10px;
+    margin-bottom: 50px;
   }
 `;
 
 export const Form = styled.form`
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 50px;
-  margin-top: 30px;
   fieldset {
+    width: 100%;
     legend {
       font-size: 24px;
       font-weight: bold;
@@ -58,11 +60,10 @@ export const Form = styled.form`
       }
     }
     input[type="text"] {
-      all: unset;
       width: 100%;
-      width: calc(100% - 20px); // 20px = padding left+right
-      padding: 10px;
-      padding-top: 0px;
+      padding: 0px 10px 10px;
+      outline: none;
+      border: none;
       border-bottom: 1px solid lightgray;
       font-size: 16px;
     }
@@ -70,10 +71,10 @@ export const Form = styled.form`
 `;
 
 export const Progress = styled.h3`
-  text-align: center;
   font-size: 24px;
   font-weight: bold;
-  margin: 30px 0;
+  text-align: center;
+  margin-bottom: 30px;
 `;
 
 export const Main = styled.div`
@@ -104,6 +105,7 @@ export const Member = styled.div`
 export const Image = styled.div`
   overflow: hidden;
   img {
+    display: block;
     width: 100%;
     aspect-ratio: 1;
     object-fit: cover;

@@ -10,21 +10,21 @@ const Label = styled.label`
 `;
 
 const Input = styled.input`
-  vertical-align: middle;
   appearance: none;
-  border: max(2px, 0.1em) solid lightgray;
-  border-radius: 50%;
-  width: 1.5em;
-  height: 1.5em;
+  width: 1.5rem;
+  height: 1.5rem;
   margin-right: 10px;
+  border-radius: 50%;
+  border: max(2px, 0.1rem) solid lightgray;
+  vertical-align: middle;
   cursor: pointer;
-  transition: border 0.5s ease-in-out;
+  transition: border 0.3s ease-in-out;
   &:checked {
-    border: 0.5em solid var(--primary);
+    border: 0.5rem solid var(--primary);
   }
   &:focus-visible {
-    outline-offset: max(2px, 0.1em);
-    outline: max(2px, 0.1em) dotted var(--primary);
+    outline-offset: max(2px, 0.1rem);
+    outline: max(2px, 0.1rem) dotted var(--primary);
   }
 `;
 
