@@ -61,7 +61,7 @@ function Winner() {
           logoUrl:
             "https://github.com/rigood/favorite-worldcup/blob/9f9c8bcfe1c8aa943da206c5d593dfab25521fee/public/assets/img/logo.jpg?raw=true",
           femaleImgUrl:
-            "https://github.com/rigood/favorite-worldcup/blob/main/public/assets/img/10oksoon.JPG?raw=true",
+            "https://github.com/rigood/favorite-worldcup/blob/main/public/assets/img/10oksoon.jpg?raw=true",
           maleImgUrl:
             "https://github.com/rigood/favorite-worldcup/blob/main/public/assets/img/11youngcheol.jpg?raw=true",
           btnText: "이상형 찾기",
