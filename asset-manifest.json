@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/favorite-worldcup/static/css/main.dee79154.css",
-    "main.js": "/favorite-worldcup/static/js/main.53d958d3.js",
+    "main.js": "/favorite-worldcup/static/js/main.6aec6881.js",
     "index.html": "/favorite-worldcup/index.html",
     "main.dee79154.css.map": "/favorite-worldcup/static/css/main.dee79154.css.map",
-    "main.53d958d3.js.map": "/favorite-worldcup/static/js/main.53d958d3.js.map"
+    "main.6aec6881.js.map": "/favorite-worldcup/static/js/main.6aec6881.js.map"
   },
   "entrypoints": [
     "static/css/main.dee79154.css",
-    "static/js/main.53d958d3.js"
+    "static/js/main.6aec6881.js"
   ]
 }
