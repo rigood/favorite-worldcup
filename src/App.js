@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { GlobalStyle, Wrapper } from "./styled/style";
+import Analytics from "./Analytics";
 
 function App() {
   const [totalRound, setTotalRound] = useState("16");
@@ -37,6 +38,7 @@ function App() {
 
   return (
     <>
+      <Analytics />
       <GlobalStyle />
       <AppContext.Provider
         value={{
