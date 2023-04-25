@@ -347,7 +347,7 @@ export const Male = [
   {
     id: 11206,
     group: 12,
-    name: "상철",
+    name: "영철",
     src: "12youngcheol.jpg",
   },
   {
