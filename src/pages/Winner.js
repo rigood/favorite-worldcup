@@ -19,6 +19,7 @@ import {
   faSpinner,
   faSync,
 } from "@fortawesome/free-solid-svg-icons";
+import ReactGA from "react-ga";
 import { Female, Male } from "../data/Data";
 import { toPng } from "html-to-image";
 import Title from "../components/Title";
@@ -46,6 +47,12 @@ function Winner() {
   };
 
   const handleShare = () => {
+    ReactGA.event({
+      category: "카톡 공유",
+      action: "카톡 공유 버튼 클릭",
+      label: `${winner.group}기 ${winner.name} (id: ${id})`,
+    });
+
     if (window.Kakao) {
       const kakao = window.Kakao;
 
@@ -113,7 +120,13 @@ function Winner() {
       .catch((err) => {
         console.log("이미지 다운로드 중 오류가 발생하였습니다.", err);
       });
-  }, [ref, nickname, winner.group, winner.name]);
+
+    ReactGA.event({
+      category: "이미지 저장",
+      action: "이미지 저장 버튼 클릭",
+      label: `${winner.group}기 ${winner.name} (id: ${id})`,
+    });
+  }, [ref, nickname, winner.group, winner.name, id]);
 
   if (!winner) {
     return (
