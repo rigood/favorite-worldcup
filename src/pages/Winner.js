@@ -53,19 +53,33 @@ function Winner() {
         kakao.init(process.env.REACT_APP_KAKAO_KEY);
       }
 
-      kakao.Share.sendCustom({
-        templateId: 85487,
-        templateArgs: {
+      kakao.Share.sendDefault({
+        objectType: "feed",
+        content: {
           title: "🏆 나는솔로 이상형 월드컵 🏆",
-          description: "나는솔로 출연진 중 그대의 이상형을 찾아보세요.",
-          logoUrl:
-            "https://github.com/rigood/favorite-worldcup/blob/9f9c8bcfe1c8aa943da206c5d593dfab25521fee/public/assets/img/logo.jpg?raw=true",
-          femaleImgUrl:
-            "https://github.com/rigood/favorite-worldcup/blob/main/public/assets/img/10oksoon.jpg?raw=true",
-          maleImgUrl:
-            "https://github.com/rigood/favorite-worldcup/blob/main/public/assets/img/11youngcheol.jpg?raw=true",
-          btnText: "이상형 찾기",
+          description: `${nickname}의 이상형은 ${winner.group}기 ${winner.name}😍\n나는솔로 출연진 중 그대의 이상형을 찾아보세요.`,
+          imageUrl: `https://github.com/rigood/favorite-worldcup/blob/main/public/assets/img/${winner.src}?raw=true`,
+          link: {
+            mobileWebUrl: `https://rigood.github.io/favorite-worldcup/result/${id}`,
+            webUrl: `https://rigood.github.io/favorite-worldcup/result/${id}`,
+          },
         },
+        buttons: [
+          {
+            title: "이상형 결과 보기",
+            link: {
+              mobileWebUrl: `https://rigood.github.io/favorite-worldcup/result/${id}`,
+              webUrl: `https://rigood.github.io/favorite-worldcup/result/${id}`,
+            },
+          },
+          {
+            title: "이상형 찾기",
+            link: {
+              mobileWebUrl: `https://rigood.github.io/favorite-worldcup`,
+              webUrl: `https://rigood.github.io/favorite-worldcup`,
+            },
+          },
+        ],
       });
     }
   };
