@@ -134,6 +134,7 @@ export const Form = styled.form`
       border: none;
       outline: none;
       border-bottom: 1px solid lightgray;
+      font-family: inherit;
       font-size: 1.8rem;
     }
   }

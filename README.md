@@ -1,7 +1,6 @@
 # 🏆 이상형 월드컵 (나는솔로 ver)
 
 <img src="./public/assets/readme/home.png">
-<br>
 
 - [나는솔로 이상형 월드컵 바로가기](https://rigood.github.io/favorite-worldcup)
 - **토너먼트 형식으로 나는솔로 출연진 중 자신의 이상형을 고르는 게임**
