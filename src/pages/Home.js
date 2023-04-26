@@ -3,7 +3,7 @@ import { AppContext } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
 import Radio from "../components/Radio";
 import RadioGroup from "../components/RadioGroup";
-import { Form, Button } from "../styled/style";
+import { Form, Button, Notice, Feedback } from "../styled/style";
 import Title from "../components/Title";
 
 function Home() {
@@ -42,7 +42,7 @@ function Home() {
           <Radio name="totalRound" value="32">
             32강
           </Radio>
-          <Radio name="totalRound" value="16" defaultChecked>
+          <Radio name="totalRound" value="16">
             16강
           </Radio>
           <Radio name="totalRound" value="8">
@@ -78,9 +78,21 @@ function Home() {
         </fieldset>
 
         <Button type="submit" isTouchScreen={isTouchScreen}>
-          시작
+          시작하기
         </Button>
       </Form>
+      <Notice>
+        출연진 이미지 사용과 관련하여
+        <br />
+        어떠한 수익도 창출되지 않습니다.
+        <br />
+      </Notice>
+      <Feedback
+        href="https://github.com/rigood/favorite-worldcup"
+        target="_blank"
+      >
+        © 2023. rigood all rights reserved.
+      </Feedback>
     </>
   );
 }

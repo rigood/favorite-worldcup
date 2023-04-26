@@ -3,15 +3,18 @@ import { AppContext } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import {
+  ProgressText,
   ProgressBarBg,
   ProgressBar,
-  Progress,
   Main,
   Vs,
   Member,
-  Image,
-  Text,
+  MemberImage,
+  MemberText,
+  ReplayBtn,
 } from "../styled/style";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faReply } from "@fortawesome/free-solid-svg-icons";
 import { Female, Male } from "../data/Data";
 import Title from "../components/Title";
 
@@ -72,12 +75,16 @@ function Game() {
     setStep((prev) => (prev === round / 2 ? 1 : prev + 1));
   };
 
+  const handleReplay = () => {
+    navigate("/", { replace: true });
+  };
+
   return (
     <>
       <Title />
-      <Progress>
+      <ProgressText>
         {round === 2 ? "👑 결승 👑" : `${round}강 ⚽ (${step}/${round / 2})`}
-      </Progress>
+      </ProgressText>
       <ProgressBarBg>
         <ProgressBar ratio={(step / (round / 2)) * 100 - 5} />
       </ProgressBarBg>
@@ -85,20 +92,24 @@ function Game() {
         {displays.map((member) => {
           return (
             <Member key={member.id} onClick={handleClick(member)}>
-              <Image>
+              <MemberImage>
                 <img
                   src={process.env.PUBLIC_URL + "/assets/img/" + member.src}
                   alt={`${member.group}기 ${member.name}`}
                 />
-              </Image>
-              <Text>
+              </MemberImage>
+              <MemberText>
                 {member.group}기 {member.name}
-              </Text>
+              </MemberText>
             </Member>
           );
         })}
         <Vs>VS</Vs>
       </Main>
+      <ReplayBtn onClick={handleReplay}>
+        <FontAwesomeIcon icon={faReply} />
+        <span>다시 하기</span>
+      </ReplayBtn>
     </>
   );
 }

@@ -1,6 +1,10 @@
 import styled, { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import GmarketWoff2 from "../fonts/GmarketSansBold.woff2";
+import GmarketWoff from "../fonts/GmarketSansBold.woff";
+import PretendardWoff2 from "../fonts/Pretendard-Regular.woff2";
+import PretendardWoff from "../fonts/Pretendard-Regular.woff";
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -9,23 +13,45 @@ ${reset}
 :root{
   --primary: #ff3e51;
   --black: #212529;
-  --gray: #EDF2F7;
+  --gray: #9e9e9e;
+  --progressBarBg: #EDF2F7;
+}
+
+@font-face {
+  font-family: "gmarket";
+  src: url(${GmarketWoff2}) format("woff2"),
+  url(${GmarketWoff}) format("woff");
+}
+
+@font-face {
+  font-family: "pretendard";
+  src: url(${PretendardWoff2}) format("woff2"),
+  url(${PretendardWoff}) format("woff");
 }
 
 *{
   box-sizing: border-box;
 }
 
+html{
+  font-size: 62.5%;
+}
+
+@media screen and (max-width: 400px){
+  html{
+    font-size: 50%;
+  }
+}
+
 body{
   color: var(--black);
+  background: linear-gradient(#FB7B72 5%, #FFB0A3, #FB7B72);
+  font-family: "pretendard";
+  line-height: 1.3;
 }
 
 li{
   list-style: none;
-}
-
-button{
-  all: unset;
 }
 
 input:-webkit-autofill,
@@ -51,22 +77,37 @@ input:autofill:active {
 
 export const Wrapper = styled.div`
   width: 100%;
-  max-width: 450px;
+  max-width: 480px;
+  min-height: 100vh;
   margin: 0 auto;
-  padding: 50px 30px;
+  padding: 4rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+`;
+
+export const MC = styled.img`
+  position: absolute;
+  bottom: 0;
+  right: 50px;
+
+  @media screen and (max-width: 1508px) {
+    display: none;
+  }
 `;
 
 export const TitleWrapper = styled.div`
+  font-family: "gmarket";
   color: var(--primary);
   text-align: center;
+  margin-bottom: 3rem;
   h2 {
-    font-size: 30px;
-    margin-bottom: 10px;
+    font-size: 3rem;
   }
   h1 {
-    font-size: 40px;
+    font-size: 4rem;
     font-weight: bold;
-    margin-bottom: 50px;
   }
 `;
 
@@ -74,34 +115,58 @@ export const Form = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 5rem;
   fieldset {
     width: 100%;
     legend {
-      font-size: 24px;
+      font-size: 2.4rem;
       font-weight: bold;
-      margin-bottom: 20px;
+      margin-bottom: 2rem;
       span.asterisk {
-        margin-left: 5px;
+        margin-left: 0.5rem;
         color: var(--primary);
       }
     }
     input[type="text"] {
       width: 100%;
-      padding: 0px 10px 10px;
-      outline: none;
+      padding: 1rem 0;
+      margin: -1rem 0 -1rem;
       border: none;
+      outline: none;
       border-bottom: 1px solid lightgray;
-      font-size: 16px;
+      font-size: 1.8rem;
     }
   }
+`;
+
+export const Notice = styled.p`
+  margin-top: 4rem;
+  font-size: 1.4rem;
+  color: var(--gray);
+  text-align: center;
+  word-break: break-all;
+  white-space: pre-wrap;
+`;
+
+export const Feedback = styled.a`
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: var(--gray);
+`;
+
+export const ProgressText = styled.h3`
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-align: center;
 `;
 
 export const ProgressBarBg = styled.div`
   width: 100%;
   height: 5px;
-  background-color: var(--gray);
-  margin: 30px 0 50px 0;
+  background-color: var(--progressBarBg);
+  margin: 2.5rem 0 5rem 0;
   position: relative;
 `;
 
@@ -112,17 +177,12 @@ export const ProgressBar = styled.div`
   transition: width 0.5s ease;
 `;
 
-export const Progress = styled.h3`
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-`;
-
-export const Main = styled.div`
+export const Main = styled.main`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  gap: 1rem;
+  margin-bottom: 3rem;
   position: relative;
 `;
 
@@ -131,9 +191,9 @@ export const Vs = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -100%);
-  font-size: 32px;
-  font-weight: bold;
+  font-size: 3.2rem;
   font-style: italic;
+  font-weight: bold;
   color: var(--primary);
   text-shadow: -3px 0 white, 0 3px white, 3px 0 white, 0 -3px white;
 `;
@@ -143,7 +203,8 @@ export const Member = styled.div`
   cursor: pointer;
 `;
 
-export const Image = styled.div`
+export const MemberImage = styled.div`
+  margin-bottom: 2rem;
   overflow: hidden;
   img {
     display: block;
@@ -159,51 +220,57 @@ export const Image = styled.div`
   }
 `;
 
-export const Text = styled.p`
-  margin-top: 20px;
+export const MemberText = styled.p`
+  font-size: 2.4rem;
   text-align: center;
-  font-size: 20px;
+`;
+
+export const SaveImg = styled.div`
+  padding: 1rem;
 `;
 
 export const WinnerImage = styled.div`
+  width: 100%;
+  aspect-ratio: 1;
+  margin: -1.5rem 0 2.5rem;
+
+  border-radius: 3rem;
   background-image: url(${(props) => props.src});
   background-size: cover;
   background-position: center center;
-  width: 100%;
-  aspect-ratio: 1;
-  transform: scale(0.9);
-  border-radius: 40px;
+
   overflow: hidden;
   position: relative;
+
   img {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 100px;
-    height: 100px;
+    top: 1.6rem;
+    left: 1rem;
+    width: 8rem;
+    height: 8rem;
+    user-select: none;
   }
 `;
 
 export const WinnerLoading = styled.div`
+  font-size: 2rem;
   text-align: center;
   span {
-    margin-left: 10px;
+    margin-left: 1rem;
   }
 `;
 
 export const WinnerText = styled.div`
-  text-align: center;
   font-weight: bold;
+  text-align: center;
+
   div:first-child {
-    font-size: 24px;
-    padding-top: 20px;
+    font-size: 2.4rem;
   }
   div:last-child {
-    font-size: 40px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    font-size: 3.9rem;
     span {
-      margin: 0 10px;
+      margin: 0 1rem;
     }
   }
 `;
@@ -215,31 +282,58 @@ export const WinnerHeart = styled(FontAwesomeIcon)`
 export const Buttons = styled.div`
   width: 100%;
   display: flex;
-  gap: 10px;
-  margin-top: 30px;
+  gap: 1rem;
+  margin: 2.5rem 0 1rem;
 `;
 
 export const Button = styled.button`
   flex: 1;
+
+  width: 100%;
+  padding: 1.5rem 1rem;
+
   display: flex;
   justify-content: center;
-  gap: 10px;
-  padding: 15px 10px;
-  width: calc(100% - 20px); // 20px = padding left+right
-  border-radius: 5px;
+  align-items: center;
+
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
   background-color: var(--primary);
+
+  font-family: inherit;
+  font-size: 1.7rem;
   color: white;
   cursor: pointer;
+
   transition: all 0.3s;
   ${(props) => (props.isTouchScreen ? "" : "&:hover{opacity:0.8}")}
+
+  span {
+    margin-left: 1rem;
+  }
 `;
 
-export const ReplayBtn = styled.div`
+export const ReplayBtn = styled.button`
+  align-self: center;
+
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-top: 30px;
-  font-size: 18px;
+  align-items: center;
+
+  width: fit-content;
+  padding: 1.5rem 1rem;
+
+  border: none;
+  outline: none;
+  background-color: white;
+
+  font-family: inherit;
+  font-size: 2rem;
   font-weight: bold;
   cursor: pointer;
+
+  span {
+    margin-left: 1rem;
+  }
 `;

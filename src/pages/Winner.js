@@ -3,6 +3,7 @@ import { useState, useEffect, useContext, useCallback, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import {
   WinnerLoading,
+  SaveImg,
   WinnerImage,
   WinnerText,
   WinnerHeart,
@@ -107,7 +108,7 @@ function Winner() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        paddingBlock: "30px",
+        padding: "1rem",
       },
     })
       .then((dataUrl) => {
@@ -140,7 +141,7 @@ function Winner() {
   return (
     <>
       <Particles />
-      <div ref={ref}>
+      <SaveImg ref={ref}>
         <Title />
         <WinnerImage
           src={process.env.PUBLIC_URL + "/assets/img/" + winner.src}
@@ -161,7 +162,7 @@ function Winner() {
             <WinnerHeart icon={faHeart} beat />
           </div>
         </WinnerText>
-      </div>
+      </SaveImg>
       <Buttons>
         {!isSafariBrowser && (
           <Button onClick={handleImgSave} isTouchScreen={isTouchScreen}>
