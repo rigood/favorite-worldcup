@@ -1,13 +1,25 @@
 # 🏆 이상형 월드컵 (나는솔로 ver)
 
-- [Demo 바로가기](https://rigood.github.io/favorite-worldcup)
+<img src="./public/assets/readme/home.png">
+<br>
+
+- [나는솔로 이상형 월드컵 바로가기](https://rigood.github.io/favorite-worldcup)
 - **토너먼트 형식으로 나는솔로 출연진 중 자신의 이상형을 고르는 게임**
+
+<br>
+
+|                    **홈 화면**                     |                   **게임 진행**                    |                    **최종 결과**                     |                    **카톡 공유**                    |
+| :------------------------------------------------: | :------------------------------------------------: | :--------------------------------------------------: | :-------------------------------------------------: |
+| <img src="./public/assets/readme/mobile-home.png"> | <img src="./public/assets/readme/mobile-game.png"> | <img src="./public/assets/readme/mobile-winner.png"> | <img src="./public/assets/readme/mobile-share.png"> |
+|                                                    |                                                    |                                                      |                                                     |
 
 <br>
 
 ## 💻 프로젝트
 
-- 2022년 11월 5일 ~ 9일 (개인 프로젝트)
+- 개인 프로젝트
+- 기획, 제작: 2022년 11월 5일 ~ 9일
+- 업데이트: 2023년 4월 24일 ~ 26일
 
 <br>
 
