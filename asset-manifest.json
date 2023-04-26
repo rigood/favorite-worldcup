@@ -1,13 +1,17 @@
 {
   "files": {
     "main.css": "/favorite-worldcup/static/css/main.dee79154.css",
-    "main.js": "/favorite-worldcup/static/js/main.6aec6881.js",
+    "main.js": "/favorite-worldcup/static/js/main.14759352.js",
+    "static/media/Pretendard-Regular.woff": "/favorite-worldcup/static/media/Pretendard-Regular.32d8ced04df3d294cb98.woff",
+    "static/media/Pretendard-Regular.woff2": "/favorite-worldcup/static/media/Pretendard-Regular.c2d6e5ccab1998598e2a.woff2",
+    "static/media/GmarketSansBold.woff": "/favorite-worldcup/static/media/GmarketSansBold.08e6d9230de5561953e8.woff",
+    "static/media/GmarketSansBold.woff2": "/favorite-worldcup/static/media/GmarketSansBold.9b6c7399c2ac1e4ee270.woff2",
     "index.html": "/favorite-worldcup/index.html",
     "main.dee79154.css.map": "/favorite-worldcup/static/css/main.dee79154.css.map",
-    "main.6aec6881.js.map": "/favorite-worldcup/static/js/main.6aec6881.js.map"
+    "main.14759352.js.map": "/favorite-worldcup/static/js/main.14759352.js.map"
   },
   "entrypoints": [
     "static/css/main.dee79154.css",
-    "static/js/main.6aec6881.js"
+    "static/js/main.14759352.js"
   ]
 }
