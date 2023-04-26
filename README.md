@@ -19,14 +19,26 @@
   - [x] 출연진(이상형) 성별 선택 (여자, 남자, 성별무관)
   - [x] 사용자 닉네임 입력 가능
 
+<img src="./public/assets/readme/home.png">
+<br>
+<br>
+
 - **이상형 월드컵 게임**
 
   - [x] 나는솔로 출연진을 랜덤 추출하여 1:1 매치
   - [x] 현재 라운드, 진행중인 단계 표시
 
+<img src="./public/assets/readme/game.png">
+<br>
+<br>
+
 - **최종 결과 확인 및 공유**
   - [x] 이상형 이미지 저장 가능
   - [x] 카카오톡 링크 공유 가능
+
+<img src="./public/assets/readme/winner.png">
+<br>
+<br>
 
 <br>
 
